@@ -6,7 +6,7 @@ func main() {
 
 	//Primitive Types and Variable Declarations
 
-	fmt.Printf("Hello,\n")
+	fmt.Println("Hello")
 	fmt.Println("World!")
 
 	var age int64 = 40
@@ -132,12 +132,19 @@ func main() {
 	x := 0
 	changeValue(&x)
 
-	fmt.Println("x=",x)
+	fmt.Println("x =",x)
 	fmt.Println("Memory Address for x =",&x)
 
+	yPtr := new(int)
+	changeAnother(yPtr)
+	fmt.Println("y =", *yPtr)
+	fmt.Println("Memory Address for y =",&yPtr)
 
+	//structs
+	rect1 := Rectangle{40,50,12,10}
 
-
+	fmt.Println("Rectangle's height", rect1.height)
+	fmt.Println("Rectangle's Area", rect1.area())
 }
 // Function Syntax
 func add(numbers []float64) float64 {
@@ -198,3 +205,20 @@ func demPanic(){
 func changeValue(x *int){
 	*x = 3
 }
+
+func changeAnother(yPtr *int){
+	*yPtr = 100;
+}
+
+// Structs
+type Rectangle struct{
+	leftX float64
+	topY float64
+	height float64
+	width float64
+}
+// Area of a rectangle - A Method of Struct
+func (rect *Rectangle) area() float64{
+	return rect.width * rect.height
+}
+
