@@ -1,20 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 
 	//Primitive Types and Variable Declarations
-
+	fmt.Println("*******Primitive Types and Variable Declaration*******")
 	fmt.Println("Hello")
 	fmt.Println("World!")
 
 	var age int64 = 40
-
 	var flo float64 = 5555.33
 
-	//fmt.Println(age)
-	//fmt.Println(flo)
+	fmt.Println(age)
+	fmt.Println(flo)
 
 	randNum := 10
 
@@ -36,7 +38,28 @@ func main() {
 	fmt.Printf("%c\n",'a')
 	fmt.Println(isOver40)
 
+
+	// Type conversion
+
+	myInt := 5
+	myFloat:=10.6
+	myString:="1815972"
+	yourString:="4002.1151"
+	fmt.Println("*******Type Conversion*******")
+
+	fmt.Println(float64(myInt))
+	fmt.Println(int(myFloat))
+
+	newInt, _ := strconv.ParseInt(myString,0,64)
+	fmt.Println(newInt)
+
+	newFloat, _ := strconv.ParseFloat(yourString,64)
+	fmt.Println(newFloat)
+
 	// For loop
+
+	fmt.Println("For loop")
+
 	i:=1
 
 	for(i<=10){
