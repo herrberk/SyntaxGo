@@ -3,6 +3,9 @@ package main
 import ("fmt"
 "net/http")
 
+/**
+Simple HTTP Server
+ */
 func main(){
 	http.HandleFunc("/",handler)
 	http.HandleFunc("/earth",handler2)
