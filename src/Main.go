@@ -164,10 +164,14 @@ func main() {
 	fmt.Println("Memory Address for y =",&yPtr)
 
 	//structs
-	rect1 := Rectangle{40,50,12,10}
+	rect1 := Rectangle{
+		leftX: 40,
+		topY: 50,
+		width:12,
+		height:10}
 
 	fmt.Println("Rectangle's height", rect1.height)
-	fmt.Println("Rectangle's Area", rect1.area())
+	fmt.Println("Rectangle's Area", rect1.myarea())
 }
 // Function Syntax
 func add(numbers []float64) float64 {
@@ -241,7 +245,7 @@ type Rectangle struct{
 	width float64
 }
 // Area of a rectangle - A Method of Struct
-func (rect *Rectangle) area() float64{
+func (rect *Rectangle) myarea() float64{
 	return rect.width * rect.height
 }
 

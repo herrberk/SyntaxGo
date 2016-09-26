@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	file,error:= os.Create("samp.txt")
+	file,err:= os.Create("samp.txt")
 
-	if error !=nil {
+	if err !=nil {
 		log.Fatal(io.ErrNoProgress)
 	}
 
